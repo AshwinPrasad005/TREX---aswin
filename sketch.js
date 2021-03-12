@@ -37,11 +37,10 @@ function setup() {
   trex = createSprite(50,180,20,50);
   trex.addAnimation("running", trex_running);
   trex.scale = 0.5;
+  camera.positon.x = displayWidth/2; 
   
-  ground = createSprite(200,180,400,20);
+  ground = createSprite(200,180,1200,20);
   ground.addImage("ground",groundImage);
-  ground.x = ground.width /2;
-  ground.velocityX = -4;
   
   invisibleGround = createSprite(200,190,400,10);
   invisibleGround.visible = false;
@@ -78,10 +77,6 @@ function draw() {
     }
   
     trex.velocityY = trex.velocityY + 0.8
-  
-    if (ground.x < 0){
-      ground.x = ground.width/2;
-    }
     
     spawnClouds();
     
